@@ -2,15 +2,17 @@ import axios from "axios";
 import { EActionType } from "../enums/ActionType";
 import IMoveCardData from "../types/MovieCard";
 
+const baseUrl = "/tinder-for-movies/recommendations";
+
 const getAll = () => {
-  return axios.get<IMoveCardData[]>(`/recommendations/movie-card.json`);
+  return axios.get<IMoveCardData[]>(`${baseUrl}/movie-card.json`);
 };
 
 const rejectOrAcceptById = (
   id: string | undefined,
   actionType: EActionType
 ) => {
-  return axios.put<EActionType[]>(`/recommendations/${id}/${actionType}`);
+  return axios.put<EActionType[]>(`${baseUrl}/${id}/${actionType}`);
 };
 
 const MovieCardDataService = {
