@@ -38,7 +38,7 @@ const MovieCard: React.FC = () => {
   return (
     <div className="container pt-5 pb-5">
       <div className="row justify-content-md-center">
-        <div className="col-12 col-lg-6">
+        <div className="col-12 col-lg-4">
           <Swiper
             onSwiper={setSwiperInstance}
             onSliderFirstMove={() =>
