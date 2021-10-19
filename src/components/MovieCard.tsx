@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import Card from "./Card";
+import { AxiosResponse } from "axios";
 
 const MovieCard: React.FC = () => {
   const [movieCard, setMovieCard] = useState<Array<IMoveCardData>>([]);
@@ -19,10 +20,12 @@ const MovieCard: React.FC = () => {
   }, []);
 
   const getMovieCard = () => {
-    MovieCardDataService.getAll().then((response: any) => {
-      setMovieCard(response.data);
-      setCurrentMovieCard(response.data[0]);
-    });
+    MovieCardDataService.getAll().then(
+      (response: AxiosResponse<IMoveCardData[]>) => {
+        setMovieCard(response.data);
+        setCurrentMovieCard(response.data[0]);
+      }
+    );
   };
 
   const sendSelectionResult = (

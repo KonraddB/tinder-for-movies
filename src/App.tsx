@@ -1,7 +1,8 @@
+import React from "react";
 import "./App.scss";
 import MovieCard from "./components/MovieCard";
 
-const App = () => {
+const App: React.FC = () => {
   return <MovieCard />;
 };
 

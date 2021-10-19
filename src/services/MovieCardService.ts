@@ -1,15 +1,16 @@
+import axios from "axios";
 import { EActionType } from "../enums/ActionType";
-import http from "../http-common";
+import IMoveCardData from "../types/MovieCard";
 
 const getAll = () => {
-  return http.get(`/movie-card.json`);
+  return axios.get<IMoveCardData[]>(`/recommendations/movie-card.json`);
 };
 
 const rejectOrAcceptById = (
   id: string | undefined,
   actionType: EActionType
 ) => {
-  return http.put(`/${id}/${actionType}`);
+  return axios.put<EActionType[]>(`/recommendations/${id}/${actionType}`);
 };
 
 const MovieCardDataService = {
