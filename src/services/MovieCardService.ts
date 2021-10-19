@@ -9,7 +9,7 @@ const rejectOrAcceptById = (
   id: string | undefined,
   actionType: EActionType
 ) => {
-  return http.put(`/recommendations/${id}/${actionType}`);
+  return http.put(`/${id}/${actionType}`);
 };
 
 const MovieCardDataService = {

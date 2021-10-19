@@ -59,7 +59,7 @@ const MovieCard: React.FC = () => {
               size="medium"
               variant="contained"
               color="success"
-              onClick={() => sendSelectionResult(EActionType.REJECT, true)}
+              onClick={() => sendSelectionResult(EActionType.ACCEPT, true)}
             >
               Accept
             </Button>
